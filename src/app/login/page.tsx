@@ -46,7 +46,7 @@ export default function Login() {
     // Document creation
     let payload = {
       email,
-      userId,
+      userId: userResponse.$id,
       username,
       password,
       fav_breed: breed,
@@ -55,7 +55,7 @@ export default function Login() {
     let documentResponse = await database.createDocument(
       USERS_DATABASE,
       USERS_COLLECTION,
-      userResponse.$id,
+      ID.unique(),
       payload
     );
 
