@@ -3,4 +3,18 @@
 @tailwind utilities;
 
 :root {
+  /* COLORS */
+  --clr-bg: #010101;
+  --clr-text: #fbf4f4;
+
+  --clr-primary-01: #ab4444;
+  --clr-primary-02: #371616;
+
+  --clr-accent: #be5b5b;
+}
+
+@layer base {
+  body {
+    @apply bg-[--clr-bg];
+  }
 }
