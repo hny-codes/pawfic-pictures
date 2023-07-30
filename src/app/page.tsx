@@ -6,7 +6,7 @@ export default function Home() {
   return (
     <main>
       <div>
-        <Image src={DogPic} alt='dog picture' className='' />
+        <Image src={DogPic} alt='dog picture' className='animate-dogHero' />
         <div className='text-[--clr-text] text-center mt-8 px-8'>
           <h1 className='italic text-3xl'>Love Dogs?</h1>
           <h2 className='text-sm mt-4'>We do too! Get your dog dosage here</h2>
