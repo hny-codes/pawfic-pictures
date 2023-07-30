@@ -9,7 +9,7 @@ export default function Home() {
         <Image
           src={DogPic}
           alt='dog picture'
-          className='animate-dogHero sm:order-1 sm:h-screen sm:object-cover '
+          className='animate-dogHero max-h-[65vh] sm:max-h-max sm:order-1 sm:h-screen object-cover '
         />
         <div className='text-[--clr-text] text-center mt-8 px-8 sm:place-self-center sm:text-left'>
           <h1 className='italic text-3xl'>Love Dogs?</h1>
