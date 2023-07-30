@@ -4,6 +4,13 @@ import Image from 'next/image';
 import Link from 'next/link';
 import DogPic from 'public/images/dog.jpg';
 import { useForm, SubmitHandler } from 'react-hook-form';
+import {
+  database,
+  account,
+  USERS_DATABASE,
+  USERS_COLLECTION,
+} from '@/appwriteConfig';
+import { ID } from 'appwrite';
 
 interface FormInput {
   email: string;
@@ -23,7 +30,41 @@ export default function Login() {
     formState: { errors },
   } = useForm<FormInput>();
 
-  const onSubmit: SubmitHandler<FormInput> = (data) => console.log(data);
+  const onSubmit: SubmitHandler<FormInput> = (data) =>
+    createUser(data.email, data.username, data.password, data.favorite);
+
+  const createUser = async (
+    email: string,
+    username: string,
+    password: string,
+    breed: string
+  ) => {
+    const userId = ID.unique();
+    // Auth user creation
+    let userResponse = await account.create(userId, email, password, username);
+
+    // Document creation
+    let payload = {
+      email,
+      userId,
+      username,
+      password,
+      fav_breed: breed,
+    };
+
+    let documentResponse = await database.createDocument(
+      USERS_DATABASE,
+      USERS_COLLECTION,
+      userResponse.$id,
+      payload
+    );
+
+    // console.log('USER');
+    // console.log(userResponse);
+
+    // console.log('DOCUMENT');
+    // console.log(documentResponse);
+  };
 
   return (
     <main>
@@ -80,10 +121,10 @@ export default function Login() {
                 type='password'
                 {...register('password', {
                   required: true,
-                  minLength: 6,
+                  minLength: 8,
                 })}
                 className='text-black input-field'
-                placeholder='Minimum: 6 characters'
+                placeholder='Minimum: 8 characters'
               />
               {/* Validate missing field */}
               {errors.password?.type === 'required' && (
