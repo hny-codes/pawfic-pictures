@@ -1,6 +1,7 @@
 'use client';
 
 import Image from 'next/image';
+import { useState } from 'react';
 import Link from 'next/link';
 import DogPic from 'public/images/dog.jpg';
 import { useForm, SubmitHandler } from 'react-hook-form';
@@ -24,14 +25,18 @@ const ErrorMissing = ({ element }: { element: string }) => (
 );
 
 export default function Login() {
+  const [loading, setLoading] = useState(false);
+
   const {
     register,
     handleSubmit,
     formState: { errors },
   } = useForm<FormInput>();
 
-  const onSubmit: SubmitHandler<FormInput> = (data) =>
+  const onSubmit: SubmitHandler<FormInput> = (data) => {
+    setLoading(true);
     createUser(data.email, data.username, data.password, data.favorite);
+  };
 
   const createUser = async (
     email: string,
@@ -145,12 +150,34 @@ export default function Login() {
                 placeholder='Husky'
               />
             </div>
-            <button
-              type='submit'
-              className='mt-8 bg-[--clr-primary-01] px-4 py-2 w-1/2 mx-auto sm:ml-0 rounded-lg hover:opacity-80 transition'
-            >
-              Create!
-            </button>
+            <div className='flex items-center my-8 relative'>
+              <button
+                type='submit'
+                className='bg-[--clr-primary-01] px-4 py-2 w-1/2 mx-auto sm:ml-0 rounded-lg hover:opacity-80 transition'
+              >
+                Create!
+              </button>
+              <svg
+                xmlns='http://www.w3.org/2000/svg'
+                width='32'
+                height='32'
+                viewBox='0 0 24 24'
+                className={`ml-2 ${loading ? 'block' : 'hidden'} absolute right-4 sm:left-1/2 sm:right-1/2`}
+              >
+                <path
+                  fill='currentColor'
+                  d='M12,4a8,8,0,0,1,7.89,6.7A1.53,1.53,0,0,0,21.38,12h0a1.5,1.5,0,0,0,1.48-1.75,11,11,0,0,0-21.72,0A1.5,1.5,0,0,0,2.62,12h0a1.53,1.53,0,0,0,1.49-1.3A8,8,0,0,1,12,4Z'
+                >
+                  <animateTransform
+                    attributeName='transform'
+                    dur='0.75s'
+                    repeatCount='indefinite'
+                    type='rotate'
+                    values='0 12 12;360 12 12'
+                  />
+                </path>
+              </svg>
+            </div>
           </div>
         </form>
       </div>
