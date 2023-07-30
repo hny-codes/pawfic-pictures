@@ -18,3 +18,9 @@
     @apply bg-[--clr-bg];
   }
 }
+
+@layer components {
+  .input-field {
+    @apply rounded-lg px-2 py-0.5;
+  }
+}

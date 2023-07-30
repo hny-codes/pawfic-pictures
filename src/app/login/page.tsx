@@ -46,7 +46,8 @@ export default function Login() {
                   required: true,
                   pattern: /[^@ \t\r\n]+@[^@ \t\r\n]+\.[^@ \t\r\n]+/,
                 })}
-                className='text-black'
+                className='text-black input-field'
+                placeholder='jane1@bark.com'
               />
               {/* Validate missing field */}
               {errors.email?.type === 'required' && (
@@ -65,7 +66,8 @@ export default function Login() {
                 {...register('username', {
                   required: true,
                 })}
-                className='text-black'
+                className='text-black input-field'
+                placeholder='Jane'
               />
               {/* Validate missing field */}
               {errors.username?.type === 'required' && (
@@ -80,7 +82,8 @@ export default function Login() {
                   required: true,
                   minLength: 6,
                 })}
-                className='text-black'
+                className='text-black input-field'
+                placeholder='Minimum: 6 characters'
               />
               {/* Validate missing field */}
               {errors.password?.type === 'required' && (
@@ -95,7 +98,11 @@ export default function Login() {
             </div>
             <div className='py-2'>
               <label>Favorite Dog Breed</label>
-              <input {...register('favorite')} className='text-black' />
+              <input
+                {...register('favorite')}
+                className='text-black input-field'
+                placeholder='Husky'
+              />
             </div>
             <button
               type='submit'
