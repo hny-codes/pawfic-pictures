@@ -1,6 +1,7 @@
 'use client';
 
 import Image from 'next/image';
+import Link from 'next/link';
 import { useState } from 'react';
 import { useRouter, redirect } from 'next/navigation';
 import DogPic from 'public/images/dog.jpg';
@@ -222,6 +223,11 @@ export default function Create() {
                 <h1>This email is already in use!</h1>
               </div>
             </div>
+            <Link href={'/'}>
+              <p className='hover:text-[--clr-primary-01] transition'>
+                Return to home ⇨{' '}
+              </p>
+            </Link>
           </form>
         </div>
       ) : (
