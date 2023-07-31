@@ -17,12 +17,12 @@ export default function Home() {
             We do too! Get your dog dosage here
           </h2>
           <Link href={'/login'}>
-            <button className='mt-8 ml-8 bg-[--clr-primary-01] px-4 py-2 rounded-lg hover:opacity-80 transition'>
+            <button className='mt-8 bg-[--clr-primary-01] px-4 py-2 rounded-lg hover:opacity-80 transition'>
               Login here!
             </button>
           </Link>
           <Link href={'/create'}>
-            <button className='mt-8 bg-[--clr-primary-01] px-4 py-2 rounded-lg hover:opacity-80 transition'>
+            <button className='mt-8 ml-8 bg-[--clr-primary-01] px-4 py-2 rounded-lg hover:opacity-80 transition'>
               Join us!
             </button>
           </Link>
