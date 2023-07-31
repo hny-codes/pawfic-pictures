@@ -118,7 +118,7 @@ export default function Create() {
             className='text-[--clr-text] text-center mt-8 sm:mb-20 px-8 sm:place-self-center sm:text-left relative'
           >
             <h1 className='text-3xl'>New Account!</h1>
-            <div className='flex flex-col mt-8 max-w-[15rem] sm:w-full mx-auto'>
+            <div className='flex flex-col mt-8 max-w-[15rem] sm:w-full mx-auto sm:mx-0'>
               <div className='py-2'>
                 <label>Email *</label>
                 <input
@@ -216,6 +216,11 @@ export default function Create() {
               </div>
               <InUseMessage accError={accError} />
             </div>
+            <Link href={'/login'}>
+              <p className='hover:text-[--clr-primary-01] transition mb-4'>
+                Joined the pack? Login here ⇨{' '}
+              </p>
+            </Link>
             <Link href={'/'}>
               <p className='hover:text-[--clr-primary-01] transition'>
                 Return to home ⇨{' '}

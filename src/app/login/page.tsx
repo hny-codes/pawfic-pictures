@@ -66,10 +66,10 @@ export default function Login() {
           />
           <form
             onSubmit={handleSubmit(onSubmit)}
-            className='text-[--clr-text] text-center mt-8 px-8 sm:place-self-center sm:text-left relative'
+            className='text-[--clr-text] text-center mt-8 px-8 sm:mb-10 sm:place-self-center sm:text-left relative'
           >
             <h1 className='text-3xl'>Login</h1>
-            <div className='flex flex-col mt-8 max-w-[15rem] sm:w-full mx-auto'>
+            <div className='flex flex-col mt-8 max-w-[15rem] sm:w-full mx-auto sm:mx-0'>
               <div className='py-2'>
                 <label>Email</label>
                 <input
@@ -145,6 +145,11 @@ export default function Login() {
               </div>
             </div>
             <InvalidMessage invalidError={invalidError} />
+            <Link href={'/create'}>
+              <p className='hover:text-[--clr-primary-01] transition mb-4'>
+                No account? Make one here ⇨{' '}
+              </p>
+            </Link>
             <Link href={'/'}>
               <p className='hover:text-[--clr-primary-01] transition'>
                 Return to home ⇨{' '}
