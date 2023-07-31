@@ -31,7 +31,7 @@ export default function Create() {
   const router = useRouter();
   const { user, setUser }: any = useAuth();
   const [loading, setLoading] = useState(false);
-  const [accError, setAccError] = useState(true);
+  const [accError, setAccError] = useState(false);
 
   const {
     register,
@@ -97,6 +97,9 @@ export default function Create() {
       if (error.code === 409) {
         setLoading(false);
         setAccError(true);
+        setTimeout(() => {
+          setAccError(false);
+        }, 5000);
       }
     }
   };
@@ -112,7 +115,7 @@ export default function Create() {
           />
           <form
             onSubmit={handleSubmit(onSubmit)}
-            className='text-[--clr-text] text-center mt-8 px-8 sm:place-self-center sm:text-left'
+            className='text-[--clr-text] text-center mt-8 sm:mb-20 px-8 sm:place-self-center sm:text-left relative'
           >
             <h1 className='text-3xl'>New Account!</h1>
             <div className='flex flex-col mt-8 max-w-[15rem] sm:w-full mx-auto'>

@@ -7,7 +7,7 @@ export default function InUseMessage({ accError }: InUse) {
     <div
       className={`${
         accError ? 'flex' : 'hidden'
-      } gap-4 items-center bg-[--clr-accent] rounded-lg px-4 py-2 animate-notif`}
+      } gap-4 items-center bg-[--clr-accent] rounded-lg px-4 py-2 animate-notif absolute left-0 right-0 -top-20 mx-6 sm:top-auto sm:-bottom-20`}
     >
       <svg
         xmlns='http://www.w3.org/2000/svg'
