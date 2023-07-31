@@ -12,9 +12,14 @@ module.exports = {
           '0%': { opacity: 0 },
           '100%': { opacity: 1 },
         },
+        fadeInOut: {
+          '0%, 100%': { opacity: 0 },
+          '10%, 90%': { opacity: 1 },
+        },
       },
       animation: {
         dogHero: 'dogHero 1s ease-in forwards',
+        notif: 'fadeInOut 5s ease-in-out forwards',
       },
     },
   },
