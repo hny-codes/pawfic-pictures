@@ -2,6 +2,7 @@
 
 import Image from 'next/image';
 import { useState } from 'react';
+import { useRouter } from 'next/navigation';
 import DogPic from 'public/images/dog.jpg';
 import { useForm, SubmitHandler } from 'react-hook-form';
 import {
@@ -24,6 +25,7 @@ const ErrorMissing = ({ element }: { element: string }) => (
 );
 
 export default function Login() {
+  const router = useRouter();
   const [loading, setLoading] = useState(false);
   const [accError, setAccError] = useState(false);
 
@@ -77,7 +79,10 @@ export default function Login() {
       console.log('DOCUMENT');
       console.log(documentResponse);
 
-      
+      if (userResponse.status === true) {
+        // Redirect user to home
+        router.push('/home');
+      }
     } catch (error: any) {
       if (error.code === 409) {
         setLoading(false);
