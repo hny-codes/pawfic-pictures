@@ -28,7 +28,7 @@ const ErrorMissing = ({ element }: { element: string }) => (
 
 export default function Create() {
   const router = useRouter();
-  const { user }: any = useAuth();
+  const { user, setUser }: any = useAuth();
   const [loading, setLoading] = useState(false);
   const [accError, setAccError] = useState(false);
 
@@ -83,8 +83,14 @@ export default function Create() {
       console.log(documentResponse);
 
       if (userResponse.status === true) {
+        // Create email session
+        await account.createEmailSession(email, password);
+        const accountSession = account.get();
+        console.log('SESSION: ', accountSession);
+        setUser(accountSession);
+
         // Redirect user to home
-        router.push('/home');
+        redirect('/home');
       }
     } catch (error: any) {
       if (error.code === 409) {
