@@ -46,12 +46,13 @@ export default function Login() {
         redirect('/home');
       }
     } catch (error) {
-      console.error((error as any).code);
-      setLoading(false);
-      setInvalidError(true);
-      setTimeout(() => {
-        setInvalidError(false);
-      }, 5000);
+      if ((error as any).code === 401) {
+        setLoading(false);
+        setInvalidError(true);
+        setTimeout(() => {
+          setInvalidError(false);
+        }, 5000);
+      }
     }
   };
 
