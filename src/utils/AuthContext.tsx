@@ -23,7 +23,6 @@ export const AuthContext =
 
 // Create exportable provider
 export const AuthProvider = ({ children }: { children: React.ReactNode }) => {
-  const [loading, setLoading] = useState(true);
   const [user, setUser] = useState<null | Models.User<Models.Preferences>>(
     null
   );
@@ -41,7 +40,6 @@ export const AuthProvider = ({ children }: { children: React.ReactNode }) => {
         console.error('No login session available!');
       }
     }
-    setLoading(false);
   };
 
   const contextData: UserContextType = {
@@ -51,9 +49,7 @@ export const AuthProvider = ({ children }: { children: React.ReactNode }) => {
 
   return (
     // @ts-ignore
-    <AuthContext.Provider value={contextData}>
-      {loading ? <p className='text-white'>loading..</p> : children}
-    </AuthContext.Provider>
+    <AuthContext.Provider value={contextData}>{children}</AuthContext.Provider>
   );
 };
 
