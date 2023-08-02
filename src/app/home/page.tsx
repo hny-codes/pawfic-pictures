@@ -27,9 +27,9 @@ export default function Home() {
     <>
       {user ? (
         <main>
-          <div className='text-white flex flex-col'>
-            <div className='px-8 py-4'>
-              <div className='relative border-4 border-[--clr-primary-01] rounded-lg h-[60vh]'>
+          <div className='text-white flex flex-col sm:grid sm:grid-cols-[1fr_1.5fr]'>
+            <div className='px-8 py-4 sm:order-1 sm:px-2 sm:mr-2'>
+              <div className='relative border-4 border-[--clr-primary-01] rounded-lg h-[60vh] sm:h-[80vh]'>
                 {data && (
                   <Image
                     src={`${data?.message}`}
@@ -62,7 +62,7 @@ export default function Home() {
                 )}
               </div>
             </div>
-            <div className='text-center'>
+            <div className='text-center sm:mt-4 sm:flex sm:flex-col sm:justify-center'>
               <div className='bg-[--clr-primary-02] rounded-lg py-4 w-[90%] mx-auto'>
                 <h1 className='font-bold text-2xl mb-4'>
                   Welcome, {user.name}!
