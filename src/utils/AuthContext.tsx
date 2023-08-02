@@ -12,7 +12,7 @@ import { account } from '@/appwriteConfig';
 import { Models } from 'appwrite';
 
 // Context Type
-type UserContextType = {
+export type UserContextType = {
   user: null | Models.User<Models.Preferences>;
   setUser: Dispatch<SetStateAction<Models.User<Models.Preferences> | null>>;
 };
