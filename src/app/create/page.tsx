@@ -86,7 +86,7 @@ export default function Create() {
       if (userResponse.status === true) {
         // Create email session
         await account.createEmailSession(email, password);
-        const accountSession = account.get();
+        const accountSession = await account.get();
         console.log('SESSION: ', accountSession);
         setUser(accountSession);
 
