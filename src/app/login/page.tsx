@@ -40,9 +40,10 @@ export default function Login() {
   const createEmailSession = async (email: string, password: string) => {
     try {
       let sessionResponse = await account.createEmailSession(email, password);
+      const accountDetails = await account.get();
 
       if (sessionResponse) {
-        setUser(sessionResponse);
+        setUser(accountDetails);
         redirect('/home');
       }
     } catch (error) {
