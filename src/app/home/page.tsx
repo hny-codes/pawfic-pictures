@@ -35,6 +35,7 @@ export default function Home() {
                     src={`${data?.message}`}
                     alt='dog image'
                     fill={true}
+                    sizes='80vh'
                     className='object-cover'
                   />
                 )}
