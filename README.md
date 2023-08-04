@@ -29,6 +29,8 @@ Here are the features implemented in the app:
 - Generate a random dog picture upon login
 - Logout function and remove all active sessions
 
+Note: Appwrite endpoints have a rate limit that prevents their service from being abused. If you encounter an infinite loading situation, then you have met the global service rate limit of the project and must wait (up to an hour) for the limit to go away. [Learn more about it here](https://appwrite.io/docs/rate-limits).
+
 ### Built with
 - Next.js (Typescript)
 - Tailwind CSS
