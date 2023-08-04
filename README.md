@@ -1,4 +1,7 @@
 # Pawfic Pictures
+
+![](/public/screenshots/DogScreenshot.png)
+
 In need of cute animal pictures but not really a cat person? Find your *pawfic* dog picture today! Pawfic Pictures is simple web application that let you view random dog pictures, built with Next.js and Appwrite. 
 
 ## Table of Contents
@@ -112,3 +115,4 @@ $ npm run dev
 - [SWR Documentation](https://swr.vercel.app/docs/getting-started)
 - [Icones](https://icones.js.org/) for icons
 - [Realtime Colors](https://realtimecolors.com/?colors=fbf4f4-010101-ab4444-371616-bf5a5a) to test out color palettes
+- [Unsplash](https://unsplash.com/)
