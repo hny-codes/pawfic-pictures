@@ -6,8 +6,8 @@ import { AuthProvider } from '@/utils/AuthContext';
 const inter = Inter({ subsets: ['latin'] });
 
 export const metadata: Metadata = {
-  title: 'Secret Dog Pictures',
-  description: 'Need dog pictures? We got you with our dog pictures.',
+  title: 'Pawfic Pictures',
+  description: 'Need dog pictures? We got you with our pawfic dog pictures.',
 };
 
 export default function RootLayout({
