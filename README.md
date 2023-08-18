@@ -41,7 +41,7 @@ Note: Appwrite endpoints have a rate limit that prevents their service from bein
 - [Icones](https://icones.js.org/)
 
 ## Setup
-There are several steps needed to locally reploy your project.
+There are several steps needed to locally deploy your project.
 
 ### Install
 First, clone this repo and install all dependencies:
