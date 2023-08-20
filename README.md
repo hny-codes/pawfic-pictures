@@ -68,11 +68,11 @@ Appwrite Cloud offers their own authentication service. You do not need to initi
 If you wish to view everything that this service offers, [visit the documentation to see more](https://appwrite.io/docs/server/users).
 
 #### Create the Database
-One of the services I wanted to try out was the database so I also created a database that served as a backend to host each user as a document. Although this service is barely used in this project, I left it as is since it is apart of learning about Appwrite. 
+One of the services I wanted to try out was the database, so I also created a database that served as a backend to host each user as a document. Although this service is barely used in this project, I left it as is since it is a part of learning about Appwrite. 
 
 1. Click **Databases** on the left side bar to view the databases page.
 2. Click **Create Database** to create a new Appwrite database. Give it any name you like. 
-3. Your new database will be empty, so you will need to create a **Collection** object for your database. Click **Create collection** and give it any name you wish. I gave mine **Users** since its supposed to be a collection of user objects that are created upon registration. 
+3. Your new database will be empty, so you will need to create a **Collection** object for your database. Click **Create collection** and give it any name you wish. I gave mine **Users** since it's supposed to be a collection of user objects that are created upon registration. 
 4. You will be directed to your new collection. Click **Attributes** to create the attributes needed to create a document within the collection. Your collection attributes should have these attributes:
 
     | Attribute    | Type     | Size |
