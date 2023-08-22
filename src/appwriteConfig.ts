@@ -1,6 +1,7 @@
 // RESOLVE: https://github.com/appwrite/sdk-for-web/issues/54
 import { Client, Databases, Account } from 'appwrite';
 
+// ENV API variables
 export const ENDPOINT = process.env.NEXT_PUBLIC_APPWRITE_ENDPOINT as string;
 export const PROJECT_ID = process.env.NEXT_PUBLIC_APPWRITE_PROJECT_ID as string;
 export const USERS_DATABASE = process.env
